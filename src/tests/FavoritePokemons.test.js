@@ -5,14 +5,14 @@ import FavoritePokemons from '../components/FavoritePokemons';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-describe('', () => {
-  it('', () => {
+describe('Testa o componente FavoritePokemons', () => {
+  it('Testa se exibe "no favorite pokemon found" se n tiver pokemon favoritado', () => {
     renderWithRouter(<FavoritePokemons />);
     const text = screen.getByText(/no favorite pokemon found/i);
     expect(text).toBeInTheDocument();
   });
 
-  it('', () => {
+  it('Testa se é exibido todos os cards de pokémons favoritados.', () => {
     const { history } = renderWithRouter(<App />);
     const detailsLink = screen.getByRole('link', { name: /more details/i });
     userEvent.click(detailsLink);
